@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Porn X</h1>
+        <a href="index.html">Voltar</a>
+    </header>
+    <main id="video-container">
+        <!-- O vídeo será carregado dinamicamente -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Porn X. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Carregar o vídeo com base no ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get("id");
+
+        const videos = [
+            { id: 1, title: "Vídeo 1", thumbnail: "thumb1.jpg", url: "video1.mp4" },
+            { id: 2, title: "Vídeo 2", thumbnail: "thumb2.jpg", url: "video2.mp4" },
+            { id: 3, title: "Vídeo 3", thumbnail: "thumb3.jpg", url: "video3.mp4" },
+        ];
+
+        const video = videos.find(v => v.id == videoId);
+
+        if (video) {
+            document.getElementById("video-container").innerHTML = `
+                <h2>${video.title}</h2>
+                <video controls autoplay width="100%">
+                    <source src="${video.url}" type="video/mp4">
+                    Seu navegador não suporta este vídeo.
+                </video>
+            `;
+        } else {
+            document.getElementById("video-container").innerHTML = "<p>Vídeo não encontrado!</p>";
+        }
+    </script>
+</body>
+</html>
