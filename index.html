@@ -10,10 +10,23 @@
     <header>
         <h1>Porn X</h1>
         <input type="text" id="search" placeholder="Pesquise por vídeos...">
+        <button id="upload-button">Upload de Vídeo</button>
     </header>
     <main>
         <section id="video-list">
             <!-- Os vídeos serão carregados dinamicamente aqui -->
+        </section>
+        <section id="upload-form" style="display: none;">
+            <h2>Envie seu vídeo</h2>
+            <form id="video-upload-form">
+                <label for="video-title">Título do Vídeo:</label>
+                <input type="text" id="video-title" required>
+                <label for="video-thumbnail">URL da Miniatura:</label>
+                <input type="text" id="video-thumbnail" placeholder="Ex: https://site.com/thumb.jpg" required>
+                <label for="video-url">URL do Vídeo:</label>
+                <input type="text" id="video-url" placeholder="Ex: https://site.com/video.mp4" required>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
     <footer>
