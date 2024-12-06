@@ -18,9 +18,19 @@
         </nav>
     </header>
     <main>
+        <section class="upload-video">
+            <h2>Envie seu vídeo</h2>
+            <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <label for="video">Escolha um vídeo:</label>
+                <input type="file" id="video" name="video" accept="video/*" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
         <section class="videos-display">
             <h2>Galeria de Vídeos</h2>
             <div class="video-grid">
+                <!-- Exemplo de vídeos estáticos ou carregados do servidor -->
                 <div class="video-item">
                     <video controls>
                         <source src="video1.mp4" type="video/mp4">
@@ -35,7 +45,6 @@
                     </video>
                     <p>Vídeo 2</p>
                 </div>
-                <!-- Adicione mais vídeos conforme necessário -->
             </div>
         </section>
     </main>
